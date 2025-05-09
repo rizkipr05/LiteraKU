@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         print("hello word")
         print("rizki pratama")
         print("saya mahasiswa")
+        print("23312191")
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
