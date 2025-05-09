@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         print("23312191")
 
         print ("Nama : Robani Diansyah")
-        print("woi p info")
+        print("woi p")
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
