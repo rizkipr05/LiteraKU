@@ -5,4 +5,23 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity"/>
+    android:background="@color/white"
+    tools:context=".SplashActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="-147dp">
+
+        <!-- ImageView untuk menampilkan gambar -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="540dp"
+            android:src="@drawable/gambar" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
