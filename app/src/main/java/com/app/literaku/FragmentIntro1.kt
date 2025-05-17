@@ -31,8 +31,6 @@ class FragmentIntro1 : Fragment() {
             // Aksi yang terjadi saat tombol Continue ditekan
             // Misalnya, berpindah ke fragment atau activity lain
         }
-
-
         return view
     }
 
