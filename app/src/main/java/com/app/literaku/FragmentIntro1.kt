@@ -26,10 +26,12 @@ class FragmentIntro1 : Fragment() {
         titleText = view.findViewById(R.id.introtitleText)
         descriptionText = view.findViewById(R.id.introdescriptionText)
 
-        // Menangani klik tombol Continue
+        // Menghubungkan ke fragment 2 saat mengklik tombol continue
         continueButton.setOnClickListener {
-            // Aksi yang terjadi saat tombol Continue ditekan
-            // Misalnya, berpindah ke fragment atau activity lain
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.main, Fragment_Intro2())
+                .addToBackStack(null)
+                .commit()
         }
         return view
     }
