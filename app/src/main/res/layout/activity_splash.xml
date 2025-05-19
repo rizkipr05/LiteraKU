@@ -18,10 +18,11 @@
 
         <!-- ImageView untuk menampilkan gambar -->
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="540dp"
+            android:id="@+id/splashimageView"
+            android:layout_width="match_parent"
+            android:layout_height="590dp"
             android:src="@drawable/gambar" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
