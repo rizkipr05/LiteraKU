@@ -121,7 +121,7 @@
         android:layout_height="48dp"
         android:text="SIGN IN"
         android:backgroundTint="#007777"
-        android:textColor="#FFFFFF"
+        android:textColor="#FFFFF"
         app:layout_constraintTop_toBottomOf="@id/forgotPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

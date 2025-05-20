@@ -20,7 +20,7 @@
         <ImageView
             android:id="@+id/splashimageView"
             android:layout_width="match_parent"
-            android:layout_height="590dp"
+            android:layout_height="684dp"
             android:src="@drawable/gambar" />
 
     </LinearLayout>
