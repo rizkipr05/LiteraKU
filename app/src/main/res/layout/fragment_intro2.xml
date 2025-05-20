@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:src="@drawable/intro"
+        android:src="@drawable/intro2"
         android:contentDescription="Illustration" />
 
     <TextView
@@ -28,21 +28,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btnContinue"
-        android:text="Continue"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#7D4EFF"
-        android:textColor="#FFFFFF"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="24dp">
 
-    <Button
-        android:id="@+id/btnSkip"
-        android:text="Skip"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#7D4EFF"
-        android:textColor="#FFFFFF"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnSignIn"
+            android:text="SIGN IN"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#7D4EFF"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:text="SIGN UP"
+            android:backgroundTint="#7D4EFF"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 </LinearLayout>
