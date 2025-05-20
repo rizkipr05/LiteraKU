@@ -21,18 +21,25 @@ class FragmentIntro1 : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_intro1, container, false)
 
-        // Menghubungkan elemen-elemen UI dengan id yang sesuai
+        // Initialize the UI elements using findViewById
         continueButton = view.findViewById(R.id.introcontinueButton)
-        titleText = view.findViewById(R.id.introtitleText)
-        descriptionText = view.findViewById(R.id.introdescriptionText)
+        skipButton = view.findViewById(R.id.introskipButton) // Don't forget to add the skipButton in XML
+        titleText = view.findViewById(R.id.titleText)
+        descriptionText = view.findViewById(R.id.descriptionText) // Add this TextView in XML if needed
 
-        // Menghubungkan ke fragment 2 saat mengklik tombol continue
+        // Set up the continue button to navigate to Fragment_Intro2
         continueButton.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.main, Fragment_Intro2())
                 .addToBackStack(null)
                 .commit()
         }
+
+        // Optionally, add the skip functionality
+        skipButton.setOnClickListener {
+            // Skip logic, navigate to the next fragment or activity
+        }
+
         return view
     }
 

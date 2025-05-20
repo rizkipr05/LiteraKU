@@ -5,34 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Gambar di atas -->
-    <!-- Ganti dengan nama gambar yang sesuai -->
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.5"
-    app:layout_constraintVertical_bias="0.2" />
-
-    <!-- Teks Judul -->
-
-    <!-- Teks Deskripsi -->
-
-    <!-- Tombol Continue -->
-
-    <!-- Tombol Skip -->
-
+    <!-- Gambar Intro -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="294dp"
         android:layout_height="224dp"
         android:src="@drawable/intro"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.252" />
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.495"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.252" />
 
+    <!-- Teks Judul -->
     <TextView
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
@@ -49,10 +35,11 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!-- Deskripsi Intro -->
     <TextView
-        android:id="@+id/introcontinueButton"
-        android:layout_width="394dp"
-        android:layout_height="38dp"
+        android:id="@+id/descriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Begin Your Educational Journey With Access To A Diverse Range Of Courses."
         android:textAlignment="center"
         android:textSize="14sp"
@@ -60,9 +47,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/titleText"
         app:layout_constraintVertical_bias="0.246" />
 
+    <!-- Tombol Continue -->
     <Button
         android:id="@+id/introcontinueButton"
         android:layout_width="wrap_content"
@@ -71,7 +59,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionText"
         app:layout_constraintVertical_bias="0.537" />
+
+    <!-- Tombol Skip -->
+    <Button
+        android:id="@+id/introskipButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SKIP"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/introcontinueButton"
+        app:layout_constraintVertical_bias="0.6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
