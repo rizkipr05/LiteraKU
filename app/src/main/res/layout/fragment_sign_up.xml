@@ -222,7 +222,6 @@
         android:text="Sign Up With Google"
         android:textColor="#000000"
         android:backgroundTint="#FFFFFF"
-        android:drawableStart="@drawable/ic_google"
         android:padding="12dp"
         android:elevation="2dp"
         android:layout_marginTop="12dp"
