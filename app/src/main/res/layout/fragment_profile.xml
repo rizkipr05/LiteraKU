@@ -36,6 +36,7 @@
 
 
             <!-- Name Field -->
+
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
@@ -236,7 +237,7 @@
                 android:layout_height="wrap_content"
                 android:text="Home"
                 android:textSize="12sp"
-                android:textColor="@color/text_secondary"
+                android:textColor="#666666"
                 android:layout_marginTop="4dp" />
 
         </LinearLayout>
@@ -257,15 +258,15 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_category"
-                android:contentDescription="Categories"
+                android:contentDescription="Kategori"
                 app:tint="@color/text_secondary" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Categories"
+                android:text="Kategori"
                 android:textSize="12sp"
-                android:textColor="@color/text_secondary"
+                android:textColor="#666666"
                 android:layout_marginTop="4dp" />
 
         </LinearLayout>
@@ -286,16 +287,15 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_riwayat"
-                android:contentDescription="Cart"
-                app:tint="@color/text_secondary" />
+                android:contentDescription="Cart" />
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cart"
+                android:text="Riwayat"
                 android:textSize="12sp"
-                android:textColor="@color/text_secondary"
-                android:layout_marginTop="4dp" />
+                android:textColor="#666666" />
 
         </LinearLayout>
 
@@ -323,7 +323,8 @@
                 android:layout_height="wrap_content"
                 android:text="Account"
                 android:textSize="12sp"
-                android:textColor="@android:color/black"
+                android:textColor="#2196F3"
+                android:textStyle="bold"
                 android:layout_marginTop="4dp" />
 
         </LinearLayout>
