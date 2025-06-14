@@ -726,7 +726,7 @@
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_shopping_cart"
+                    android:src="@drawable/ic_riwayat"
                     android:contentDescription="Cart"
                     app:tint="@color/text_secondary" />
 
