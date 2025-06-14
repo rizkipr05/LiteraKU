@@ -39,7 +39,7 @@
                 android:layout_height="48dp"
                 android:layout_marginStart="8dp"
                 android:background="#E0E0E0"
-                android:text="⚙"
+                android:text=""
                 android:textSize="16sp" />
 
         </LinearLayout>
