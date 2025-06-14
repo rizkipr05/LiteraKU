@@ -13,7 +13,7 @@
         android:contentDescription="Illustration" />
 
     <TextView
-        android:text="Enter the World of E-Learning"
+        android:text="Masuki Dunia E-Learning"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:text="Begin Your Educational Journey With Access To A Diverse Range Of Courses."
+        android:text="Mulailah Perjalanan Belajarmu dengan Akses ke Beragam Kursus Berkualitas."
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:layout_width="match_parent"
@@ -30,19 +30,19 @@
 
     <Button
         android:id="@+id/btnContinue"
-        android:text="Continue"
+        android:layout_width="216dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:backgroundTint="#7D4EFF"
-        android:textColor="#FFFFFF"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:text="Selanjutnya"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/btnSkip"
-        android:text="Skip"
+        android:layout_width="216dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:backgroundTint="#7D4EFF"
-        android:textColor="#FFFFFF"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:text="Lewati"
+        android:textColor="#FFFFFF" />
 </LinearLayout>
