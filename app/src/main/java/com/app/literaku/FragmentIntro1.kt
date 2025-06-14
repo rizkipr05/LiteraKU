@@ -32,7 +32,7 @@ class FragmentIntro1 : Fragment() {
 
         binding.btnSkip.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace((view.parent as View).id, Fragment_Intro2())
+                .replace((view.parent as View).id, FragmentSignin())
                 .addToBackStack(null)
                 .commit()
         }
