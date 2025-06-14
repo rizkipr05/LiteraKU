@@ -675,7 +675,8 @@
                 android:layout_height="wrap_content"
                 android:text="Home"
                 android:textSize="12sp"
-                android:textColor="#666666" />
+                android:textColor="#2196F3"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -726,8 +727,7 @@
                 android:layout_height="wrap_content"
                 android:text="Riwayat"
                 android:textSize="12sp"
-                android:textColor="#2196F3"
-                android:textStyle="bold" />
+                android:textColor="#666666" />
 
         </LinearLayout>
 
