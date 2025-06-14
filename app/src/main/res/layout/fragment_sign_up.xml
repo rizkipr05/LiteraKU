@@ -24,7 +24,7 @@
         android:id="@+id/signupTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SIGN UP"
+        android:text="DAFTAR"
         android:textStyle="bold"
         android:textSize="24sp"
         android:textColor="#00332F"
@@ -38,7 +38,7 @@
         android:id="@+id/signupSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create Your Account To Embark On Your\nEducational Adventure"
+        android:text="Daftar sekarang untuk memulai perjalanan belajarmu yang menyenangkan!"
         android:textAlignment="center"
         android:textSize="14sp"
         android:textColor="#757575"
@@ -154,7 +154,7 @@
         android:id="@+id/signUpButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="SIGN IN"
+        android:text="MASUK"
         android:backgroundTint="#006666"
         android:textColor="#FFFFFF"
         android:elevation="4dp"
@@ -184,7 +184,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="  Or Sign Up with  "
+            android:text="  Atau Daftar dengan  "
             android:textColor="#888"
             android:textSize="12sp"/>
 
@@ -200,7 +200,7 @@
         android:id="@+id/facebookSignUp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Sign Up With Facebook"
+        android:text="Daftar Dengan Facebook"
         android:textColor="#FFFFFF"
         android:backgroundTint="#1877F2"
         android:drawableStart="@drawable/ic_facebook"
@@ -215,7 +215,7 @@
         android:id="@+id/googleSignUp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Sign Up With Google"
+        android:text="Daftar Dengan Google"
         android:textColor="#000000"
         android:backgroundTint="#FFFFFF"
         android:padding="12dp"
@@ -236,21 +236,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Already have an Account? "
-            android:textColor="#888"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/signInLink"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign In here"
-            android:textColor="#00332F"
-            android:textStyle="bold"
-            android:textSize="12sp"/>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/signInLink"
+        android:layout_width="80dp"
+        android:layout_height="113dp"
+        android:text="Masuk di sini"
+        android:textColor="#00332F"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="206dp"
+        tools:layout_editor_absoluteY="668dp" />
+
+    <TextView
+        android:layout_width="163dp"
+        android:layout_height="64dp"
+        android:text="Sudah punya Akun? "
+        android:textColor="#888"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="93dp"
+        tools:layout_editor_absoluteY="667dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
