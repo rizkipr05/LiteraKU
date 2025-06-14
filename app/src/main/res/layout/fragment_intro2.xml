@@ -14,7 +14,7 @@
         android:contentDescription="Illustration" />
 
     <TextView
-        android:text="Enter the World of E-Learning"
+        android:text="Masuki Dunia E-Learning"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:text="Begin Your Educational Journey With Access To A Diverse Range Of Courses."
+        android:text="Tingkatkan wawasanmu kapan saja, di mana saja — mulai membaca hari ini!"
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:layout_width="match_parent"
@@ -38,19 +38,19 @@
 
         <Button
             android:id="@+id/btnSignIn"
-            android:text="SIGN IN"
+            android:layout_width="125dp"
+            android:layout_height="match_parent"
             android:layout_marginEnd="8dp"
             android:backgroundTint="#7D4EFF"
-            android:textColor="#FFFFFF"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:text="MASUK"
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/btnSignUp"
-            android:text="SIGN UP"
+            android:layout_width="125dp"
+            android:layout_height="match_parent"
             android:backgroundTint="#7D4EFF"
-            android:textColor="#FFFFFF"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:text="DAFTAR"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 </LinearLayout>
