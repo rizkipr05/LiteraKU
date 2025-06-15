@@ -7,33 +7,22 @@
     android:layout_height="match_parent"
     android:padding="24dp">
 
-    <!-- Back Button -->
-    <ImageView
-        android:id="@+id/backButton"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@drawable/ic_arrow_back"
-        android:contentDescription="Back"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="8dp"/>
 
-    <!-- Title -->
+    <!-- Subtitle -->
     <TextView
         android:id="@+id/signinTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:text="MASUK"
-        android:textStyle="bold"
-        android:textSize="24sp"
         android:textColor="#00332F"
-        app:layout_constraintTop_toBottomOf="@id/backButton"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"/>
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Subtitle -->
     <TextView
         android:id="@+id/signinSubtitle"
         android:layout_width="wrap_content"
@@ -158,9 +147,6 @@
     </LinearLayout>
 
     <!-- Facebook Sign In Button -->
-
-    <!-- Google Sign In Button -->
-
     <Button
         android:id="@+id/facebookSignIn"
         android:layout_width="0dp"
@@ -171,10 +157,10 @@
         android:text="Masuk Dengan Facebook"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/orSignInWith" />
 
+    <!-- Google Sign In Button -->
     <Button
         android:id="@+id/googleSignIn"
         android:layout_width="0dp"
@@ -190,7 +176,6 @@
         android:layout_marginTop="12dp"/>
 
     <!-- Sign Up Text -->
-
     <TextView
         android:id="@+id/signUpText"
         android:layout_width="wrap_content"
@@ -200,7 +185,6 @@
         android:textColor="#888"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.347"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/googleSignIn" />
 
