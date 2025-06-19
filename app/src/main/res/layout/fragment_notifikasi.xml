@@ -21,7 +21,7 @@
                 android:id="@+id/notification_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Notifikasi Buku"
+                android:text="Notifikasi"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="12dp" />
@@ -64,6 +64,91 @@
                         android:layout_marginTop="4dp" />
                 </LinearLayout>
             </LinearLayout>
+
+            <!-- Notifikasi 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="@android:color/darker_gray"
+                android:backgroundTint="#F5F5F5"
+                android:elevation="2dp">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/ic_mignight_background" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Buku Baru: Laskar Pelangi"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Karya Andrea Hirata!"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Notifikasi 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="@android:color/darker_gray"
+                android:backgroundTint="#F5F5F5"
+                android:elevation="2dp">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/ic_" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Buku Baru: Bumi"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Karya Tere Liye!"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Novel fantasi Indonesia tentang dunia paralel, petualangan, dan kekuatan unik."
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
 
             <!-- Notifikasi 2 - 8 (Copy yang lain sesuai kebutuhan) -->
             <!-- Kamu bisa menambahkan notifikasi lainnya seperti sebelumnya di sini -->
@@ -110,8 +195,7 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
-            android:clickable="true"
-            android:background="#E3F2FD">
+            android:clickable="true">
 
             <ImageView
                 android:layout_width="24dp"
@@ -123,8 +207,7 @@
                 android:layout_height="wrap_content"
                 android:text="Kategori"
                 android:textSize="12sp"
-                android:textColor="#2196F3"
-                android:textStyle="bold" />
+                android:textColor="#666666"/>
         </LinearLayout>
 
         <!-- Riwayat -->
@@ -156,7 +239,8 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
-            android:clickable="true">
+            android:clickable="true"
+            android:background="#E3F2FD">
 
             <ImageView
                 android:layout_width="24dp"
@@ -168,7 +252,8 @@
                 android:layout_height="wrap_content"
                 android:text="Notifikasi"
                 android:textSize="12sp"
-                android:textColor="#666666" />
+                android:textColor="#2196F3"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <!-- Profile -->

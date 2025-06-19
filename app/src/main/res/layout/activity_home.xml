@@ -662,6 +662,7 @@
             android:orientation="vertical"
             android:gravity="center"
             android:clickable="true"
+            android:background="#E3F2FD"
             android:focusable="true">
 
             <ImageView
@@ -712,8 +713,6 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
-            android:background="#E3F2FD"
-            android:clickable="true"
             android:focusable="true">
 
             <ImageView

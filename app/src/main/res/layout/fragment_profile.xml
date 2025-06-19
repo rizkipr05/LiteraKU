@@ -330,7 +330,7 @@
             android:gravity="center"
             android:clickable="true"
             android:focusable="true"
-            android:background="?android:attr/selectableItemBackground"
+            android:background="#E3F2FD"
             android:padding="8dp">
 
             <ImageView
