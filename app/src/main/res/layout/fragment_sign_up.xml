@@ -90,15 +90,17 @@
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <ImageView
-            android:id="@+id/showPasswordIcon"
+            android:id="@+id/showConfirmPasswordIcon"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_visibility"
-            android:contentDescription="Show Password"
+            android:contentDescription="Show Confirm Password"
             android:layout_marginEnd="12dp"
+            android:clickable="true"
+            android:focusable="true"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/passwordEditText"
-            app:layout_constraintBottom_toBottomOf="@id/passwordEditText"/>
+            app:layout_constraintTop_toTopOf="@id/confirmPasswordEditText"
+            app:layout_constraintBottom_toBottomOf="@id/confirmPasswordEditText"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Confirm Password -->
