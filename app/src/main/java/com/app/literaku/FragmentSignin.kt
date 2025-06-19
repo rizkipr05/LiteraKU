@@ -1,59 +1,152 @@
 package com.app.literaku
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.text.InputType
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.app.literaku.databinding.FragmentSignUpBinding
+import com.google.firebase.auth.FirebaseAuth
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class FragmentSign_up : Fragment() {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FragmentSignin.newInstance] factory method to
- * create an instance of this fragment.
- */
-class FragmentSignin : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var _binding: FragmentSignUpBinding? = null
+    private val binding get() = _binding!!
+
+    private lateinit var auth: FirebaseAuth
+
+    private var isPasswordVisible = false
+    private var isConfirmPasswordVisible = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        auth = FirebaseAuth.getInstance()
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_signin, container, false)
+    ): View {
+        _binding = FragmentSignUpBinding.inflate(inflater, container, false)
+
+        binding.signUpButton.setOnClickListener {
+            val fullName = binding.fullNameEditText.text.toString().trim()
+            val email = binding.emailEditText.text.toString().trim()
+            val password = binding.passwordEditText.text.toString().trim()
+            val confirmPassword = binding.confirmPasswordEditText.text.toString().trim()
+
+            if (validateInput(fullName, email, password, confirmPassword)) {
+                registerUser(email, password)
+            }
+        }
+
+        setupPasswordToggle()
+
+        binding.signInLink.setOnClickListener {
+            navigateToSignIn()
+        }
+
+        binding.googleSignUp.setOnClickListener {
+            showToast("Fitur daftar dengan Google belum tersedia")
+        }
+
+        binding.facebookSignUp.setOnClickListener {
+            showToast("Fitur daftar dengan Facebook belum tersedia")
+        }
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FragmentSignin.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FragmentSignin().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun setupPasswordToggle() {
+        binding.showPasswordIcon.setOnClickListener {
+            isPasswordVisible = !isPasswordVisible
+            binding.passwordEditText.inputType =
+                if (isPasswordVisible) InputType.TYPE_CLASS_TEXT
+                else InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            binding.passwordEditText.setSelection(binding.passwordEditText.text.length)
+        }
+
+        binding.showConfirmPasswordIcon.setOnClickListener {
+            isConfirmPasswordVisible = !isConfirmPasswordVisible
+            binding.confirmPasswordEditText.inputType =
+                if (isConfirmPasswordVisible) InputType.TYPE_CLASS_TEXT
+                else InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            binding.confirmPasswordEditText.setSelection(binding.confirmPasswordEditText.text.length)
+        }
+    }
+
+    private fun validateInput(fullName: String, email: String, password: String, confirmPassword: String): Boolean {
+        when {
+            fullName.isEmpty() -> {
+                showToast("Nama lengkap tidak boleh kosong")
+                return false
+            }
+            email.isEmpty() -> {
+                showToast("Email tidak boleh kosong")
+                return false
+            }
+            !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
+                showToast("Format email tidak valid")
+                return false
+            }
+            password.isEmpty() -> {
+                showToast("Password tidak boleh kosong")
+                return false
+            }
+            password.length < 6 -> {
+                showToast("Password minimal 6 karakter")
+                return false
+            }
+            password != confirmPassword -> {
+                showToast("Password tidak cocok")
+                return false
+            }
+        }
+        return true
+    }
+
+    private fun registerUser(email: String, password: String) {
+        binding.signUpButton.isEnabled = false
+
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(requireActivity()) { task ->
+                binding.signUpButton.isEnabled = true
+
+                if (task.isSuccessful) {
+                    val user = auth.currentUser
+                    Log.d("SignUp", "createUserWithEmail:success")
+                    showToast("Pendaftaran berhasil! Selamat datang ${user?.email}")
+                    navigateToSignIn()
+                } else {
+                    Log.w("SignUp", "createUserWithEmail:failure", task.exception)
+                    val errorMessage = when (task.exception?.message) {
+                        "The email address is already in use by another account." ->
+                            "Email sudah terdaftar, silakan gunakan email lain"
+                        "The email address is badly formatted." ->
+                            "Format email tidak valid"
+                        else -> "Pendaftaran gagal: ${task.exception?.localizedMessage}"
+                    }
+                    showToast(errorMessage)
                 }
             }
+    }
+
+    private fun navigateToSignIn() {
+        val intent = Intent(requireContext(), SignInActivity::class.java)
+        startActivity(intent)
+        activity?.finish() // Jika ingin hapus halaman sign up dari backstack
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

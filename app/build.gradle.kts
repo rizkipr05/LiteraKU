@@ -45,9 +45,9 @@ android {
 }
 
 dependencies {
-    // Firebase BoM untuk sinkron versi
-    implementation(platform("com.google.firebase:firebase-bom:33.13.0"))
+    implementation(platform("com.google.firebase:firebase-bom:33.15.0"))
     implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth")
 
     // AndroidX & Google Material
     implementation(libs.androidx.core.ktx)

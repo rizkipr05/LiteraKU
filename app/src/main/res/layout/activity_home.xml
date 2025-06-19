@@ -662,6 +662,7 @@
             android:orientation="vertical"
             android:gravity="center"
             android:clickable="true"
+            android:background="#E3F2FD"
             android:focusable="true">
 
             <ImageView
@@ -712,8 +713,6 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
-            android:background="#E3F2FD"
-            android:clickable="true"
             android:focusable="true">
 
             <ImageView
@@ -731,7 +730,6 @@
 
         </LinearLayout>
 
-        <!-- Account -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -743,6 +741,31 @@
 
             <ImageView
                 android:id="@+id/imageView4"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_notification" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notifikasi"
+                android:textSize="12sp"
+                android:textColor="#666666" />
+
+        </LinearLayout>
+
+        <!-- Account -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/imageView5"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_account" />
