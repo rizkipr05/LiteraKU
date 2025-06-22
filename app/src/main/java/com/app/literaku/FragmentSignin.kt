@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment
 import com.app.literaku.databinding.FragmentSignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 
-class FragmentSign_up : Fragment() {
+class FragmentSignin : Fragment() {
 
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
