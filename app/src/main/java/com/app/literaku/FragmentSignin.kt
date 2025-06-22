@@ -136,7 +136,7 @@ class FragmentSignin : Fragment() {
     }
 
     private fun navigateToSignIn() {
-        val intent = Intent(requireContext(), SignInActivity::class.java)
+        val intent = Intent(requireContext(), FragmentSignin::class.java)
         startActivity(intent)
         activity?.finish() // Jika ingin hapus halaman sign up dari backstack
     }
