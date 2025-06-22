@@ -90,7 +90,7 @@
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <ImageView
-            android:id="@+id/showConfirmPasswordIcon"
+            android:id="@+id/showConfirmPasswordIcon1"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_visibility"
@@ -100,7 +100,8 @@
             android:focusable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/confirmPasswordEditText"
-            app:layout_constraintBottom_toBottomOf="@id/confirmPasswordEditText"/>
+            app:layout_constraintBottom_toBottomOf="@id/confirmPasswordEditText"
+            tools:ignore="DuplicateIds" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Confirm Password -->
@@ -123,12 +124,12 @@
             android:textColor="#000"
             android:textColorHint="#888"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/showConfirmPasswordIcon"
+            app:layout_constraintEnd_toStartOf="@id/showConfirmPasswordIcon2"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <ImageView
-            android:id="@+id/showConfirmPasswordIcon"
+            android:id="@+id/showConfirmPasswordIcon2"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_visibility"
