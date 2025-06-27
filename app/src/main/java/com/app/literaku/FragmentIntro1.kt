@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.app.literaku.databinding.FragmentIntro1Binding
 import com.app.literaku.FragmentIntro1
-import com.example.yourapp.ui.signin.FragmentSignin
 
 class FragmentIntro1 : Fragment() {
 
