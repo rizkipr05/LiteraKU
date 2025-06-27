@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <!-- Izin untuk mengakses internet -->
+    <!-- Permission to access the internet -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -14,26 +14,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LiteraKu"
         tools:targetApi="31">
-        <activity
-            android:name=".DatabaseHelper"
-            android:exported="false" />
+
+        <!-- Define HomeActivity -->
         <activity
             android:name=".HomeActivity"
-            android:exported="false" />
+            android:exported="true" /> <!-- Set to true so it can be launched from other activities -->
+
+        <!-- Define DatabaseHelper activity (Usually a helper class, so this might not need to be an activity) -->
+        <activity
+            android:name=".DatabaseHelper"
+            android:exported="false" /> <!-- This is usually not an activity, so it should not be in the manifest -->
+
+        <!-- Define MainActivity2 -->
         <activity
             android:name=".MainActivity2"
             android:exported="false"
             android:label="@string/title_activity_main2"
             android:theme="@style/Theme.LiteraKu" />
+
+        <!-- Define SplashActivity -->
         <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+    </application>
 </manifest>

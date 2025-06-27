@@ -1,6 +1,7 @@
 package com.app.literaku
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,7 +25,6 @@ class FragmentSignUp : Fragment() {
     private lateinit var confirmPasswordInputLayout: TextInputLayout
     private lateinit var dbHelper: DatabaseHelper
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,7 +45,6 @@ class FragmentSignUp : Fragment() {
         passwordInputLayout = binding.passwordInputLayout
         confirmPasswordInputLayout = binding.confirmPasswordInputLayout
 
-
         // Handle the sign-up button click
         binding.signUpButton.setOnClickListener {
             validateInputs()
@@ -54,7 +53,6 @@ class FragmentSignUp : Fragment() {
         // Return the root view of the fragment
         return binding.root
     }
-
 
     private fun validateInputs() {
         val fullName = fullNameEditText.text.toString().trim()
@@ -100,9 +98,13 @@ class FragmentSignUp : Fragment() {
         // Insert user into the database
         val result = dbHelper.insertUser(fullName, email, password)
         if (result > 0) {
+            // Successful registration
+            Log.d("FragmentSignUp", "User inserted successfully.")
             Toast.makeText(requireContext(), "Pendaftaran berhasil", Toast.LENGTH_SHORT).show()
             navigateToSignIn(email, password)  // Navigate to SignIn with user data
         } else {
+            // Database insertion failed
+            Log.e("FragmentSignUp", "User insertion failed.")
             Toast.makeText(requireContext(), "Pendaftaran gagal", Toast.LENGTH_SHORT).show()
         }
     }
@@ -116,9 +118,14 @@ class FragmentSignUp : Fragment() {
         val fragment = FragmentSignin()
         fragment.arguments = bundle  // Passing the data to the SignIn fragment
 
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment) // Replace the current fragment with SignIn
-            .addToBackStack(null) // Optional: Add to back stack
-            .commit()
+        try {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment) // Replace the current fragment with SignIn
+                .addToBackStack(null) // Optional: Add to back stack
+                .commit()
+        } catch (e: Exception) {
+            Log.e("FragmentSignUp", "Fragment navigation failed: ${e.message}")
+            Toast.makeText(requireContext(), "Navigation failed: ${e.message}", Toast.LENGTH_SHORT).show()
+        }
     }
 }
