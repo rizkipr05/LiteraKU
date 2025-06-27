@@ -106,8 +106,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/showPasswordIcon"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-            </com.google.android.material.textfield.TextInputEditText>
+                app:layout_constraintBottom_toBottomOf="parent" />
+
 
             <ImageView
                 android:id="@+id/showPasswordIcon"
@@ -146,8 +146,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/showConfirmPasswordIcon"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-        </com.google.android.material.textfield.TextInputEditText>
+                app:layout_constraintBottom_toBottomOf="parent" />
 
             <ImageView
                 android:id="@+id/showConfirmPasswordIcon"
