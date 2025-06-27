@@ -24,8 +24,6 @@ class FragmentSignUp : Fragment() {
     private lateinit var confirmPasswordInputLayout: TextInputLayout
     private lateinit var dbHelper: DatabaseHelper
 
-    private var isPasswordVisible = false
-    private var isConfirmPasswordVisible = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,14 +45,6 @@ class FragmentSignUp : Fragment() {
         passwordInputLayout = binding.passwordInputLayout
         confirmPasswordInputLayout = binding.confirmPasswordInputLayout
 
-        // Set up the visibility toggle for password
-        binding.showPasswordIcon.setOnClickListener {
-            togglePasswordVisibility()
-        }
-
-        binding.showConfirmPasswordIcon.setOnClickListener {
-            toggleConfirmPasswordVisibility()
-        }
 
         // Handle the sign-up button click
         binding.signUpButton.setOnClickListener {
@@ -65,29 +55,6 @@ class FragmentSignUp : Fragment() {
         return binding.root
     }
 
-    private fun togglePasswordVisibility() {
-        if (isPasswordVisible) {
-            passwordEditText.inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
-            binding.showPasswordIcon.setImageResource(R.drawable.ic_visibility_off)
-        } else {
-            passwordEditText.inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-            binding.showPasswordIcon.setImageResource(R.drawable.ic_visibility)
-        }
-        isPasswordVisible = !isPasswordVisible
-        passwordEditText.setSelection(passwordEditText.text?.length ?: 0) // Keep the cursor position
-    }
-
-    private fun toggleConfirmPasswordVisibility() {
-        if (isConfirmPasswordVisible) {
-            confirmPasswordEditText.inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
-            binding.showConfirmPasswordIcon.setImageResource(R.drawable.ic_visibility_off)
-        } else {
-            confirmPasswordEditText.inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-            binding.showConfirmPasswordIcon.setImageResource(R.drawable.ic_visibility)
-        }
-        isConfirmPasswordVisible = !isConfirmPasswordVisible
-        confirmPasswordEditText.setSelection(confirmPasswordEditText.text?.length ?: 0) // Keep the cursor position
-    }
 
     private fun validateInputs() {
         val fullName = fullNameEditText.text.toString().trim()
