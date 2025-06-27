@@ -93,7 +93,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="16dp">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordEditText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -106,7 +106,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/showPasswordIcon"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+        </com.google.android.material.textfield.TextInputEditText>
 
             <ImageView
                 android:id="@+id/showPasswordIcon"
@@ -132,7 +133,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="16dp">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/confirmPasswordEditText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -145,7 +146,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/showConfirmPasswordIcon"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+        </com.google.android.material.textfield.TextInputEditText>
 
             <ImageView
                 android:id="@+id/showConfirmPasswordIcon"
