@@ -6,9 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.app.literaku.databinding.FragmentIntro1Binding
-import com.app.literaku.FragmentSignin
+import com.app.literaku.FragmentIntro1
+import com.example.yourapp.ui.signin.FragmentSignin
 
-class FragmentSignin : Fragment() {
+class FragmentIntro1 : Fragment() {
 
     private var _binding: FragmentIntro1Binding? = null
     private val binding get() = _binding!!
