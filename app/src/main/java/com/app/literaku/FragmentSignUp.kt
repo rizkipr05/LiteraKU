@@ -146,7 +146,7 @@ class FragmentSignUp : Fragment() {
         bundle.putString("userEmail", email)
         bundle.putString("userPassword", password)
 
-        val fragment = FragmentSignIn()
+        val fragment = FragmentSignin()
         fragment.arguments = bundle  // Passing the data to the SignIn fragment
 
         parentFragmentManager.beginTransaction()
