@@ -5,6 +5,11 @@
     android:layout_height="match_parent"
     android:background="#F5F5F5">
 
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
     <!-- Main Content -->
     <LinearLayout
         android:id="@+id/main_content"
@@ -320,7 +325,7 @@
 
         <!-- Categories -->
         <LinearLayout
-            android:id="@+id/kategori"
+            android:id="@+id/kategoriButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
