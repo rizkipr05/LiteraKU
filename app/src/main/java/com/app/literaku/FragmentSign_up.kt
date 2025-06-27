@@ -139,7 +139,7 @@ class FragmentSign_up : Fragment() {
 
     private fun navigateToSignIn() {
         try {
-            findNavController().navigate(R.id.action_fragmentSignUp_to_fragmentSignin)
+            findNavController().navigate(R.id.action_FragmentSignUp_to_FragmentSignin)
         } catch (e: Exception) {
             Log.e("SignUp", "Navigation error: ${e.message}")
             showToast("Navigasi gagal, silakan coba kembali.")
