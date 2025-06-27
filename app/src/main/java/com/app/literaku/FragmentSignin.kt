@@ -1,49 +1,34 @@
-package com.example.yourapp.ui.signin
+package com.app.literaku
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.yourapp.databinding.FragmentSignInBinding
+import com.app.literaku.databinding.FragmentSigninBinding
 
 class FragmentSignin : Fragment() {
 
     private lateinit var binding: FragmentSigninBinding
-    private var userEmail: String? = null
-    private var userPassword: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Inflate the layout for this fragment
         binding = FragmentSigninBinding.inflate(inflater, container, false)
 
-        // Retrieve the data passed from FragmentSignUp
+        // Retrieve email and password passed from FragmentSignUp
         arguments?.let {
-            userEmail = it.getString("userEmail")
-            userPassword = it.getString("userPassword")
+            val userEmail = it.getString("userEmail")
+            val userPassword = it.getString("userPassword")
+
+            // Optionally, show email and password in Toast for testing
+            Toast.makeText(requireContext(), "Email: $userEmail, Password: $userPassword", Toast.LENGTH_SHORT).show()
         }
 
-        // Optionally, you can display the passed data for testing
-        Toast.makeText(requireContext(), "Email: $userEmail, Password: $userPassword", Toast.LENGTH_LONG).show()
-
-        // Handle the sign-in logic (if necessary)
-        binding.signInButton.setOnClickListener {
-            signInUser(userEmail, userPassword)
-        }
+        // Handle sign-in logic here, e.g., authenticate the user
 
         return binding.root
-    }
-
-    // Function to sign-in the user (just a placeholder for now)
-    private fun signInUser(email: String?, password: String?) {
-        if (email != null && password != null) {
-            Toast.makeText(requireContext(), "Sign-In Successful: Email: $email", Toast.LENGTH_SHORT).show()
-            // Proceed with sign-in logic (e.g., check credentials, etc.)
-        } else {
-            Toast.makeText(requireContext(), "Sign-In Failed", Toast.LENGTH_SHORT).show()
-        }
     }
 }

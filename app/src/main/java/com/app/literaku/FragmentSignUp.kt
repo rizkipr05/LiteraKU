@@ -10,7 +10,6 @@ import com.example.yourapp.database.DatabaseHelper
 import com.app.literaku.databinding.FragmentSignUpBinding
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import com.app.literaku.F
 
 class FragmentSignUp : Fragment() {
 
