@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("com.google.gms.google-services")
 }
 
 android {
@@ -40,15 +39,10 @@ android {
 
     buildFeatures {
         viewBinding = true
-        compose = true
     }
 }
 
 dependencies {
-    implementation(platform("com.google.firebase:firebase-bom:33.15.0"))
-    implementation("com.google.firebase:firebase-analytics")
-    implementation("com.google.firebase:firebase-auth")
-
     // AndroidX & Google Material
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
