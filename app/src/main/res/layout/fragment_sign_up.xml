@@ -107,7 +107,7 @@
                 app:layout_constraintEnd_toStartOf="@id/showPasswordIcon"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-        </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputEditText>
 
             <ImageView
                 android:id="@+id/showPasswordIcon"
@@ -121,7 +121,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/passwordEditText"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/passwordEditText" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Confirm Password Container -->
         <androidx.constraintlayout.widget.ConstraintLayout
