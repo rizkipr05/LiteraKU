@@ -1,790 +1,790 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background_primary">
-
-    <FrameLayout
-        android:id="@+id/fragment_container"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_navigation" />
+        android:background="@color/background_primary">
 
-    <!-- Main ScrollView Content -->
-    <ScrollView
-        android:id="@+id/main_scroll_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_navigation"
-        android:fillViewport="true">
-
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingHorizontal="16dp"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp">
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_navigation" />
 
-            <!-- Header Section -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="24dp"
-                android:gravity="center_vertical">
+        <!-- Main ScrollView Content -->
+        <ScrollView
+            android:id="@+id/main_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_navigation"
+            android:fillViewport="true">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Happy Reading!"
-                    android:textSize="28sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary"
-                    android:fontFamily="sans-serif-medium" />
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_search"
-                    android:contentDescription="Search"
-                    app:tint="@color/text_secondary" />
-
-            </LinearLayout>
-
-            <!-- Best Deals Section -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginBottom="32dp">
+                android:paddingHorizontal="16dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp">
 
-                <TextView
+                <!-- Header Section -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Best Deals"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary"
-                    android:layout_marginBottom="16dp" />
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="24dp"
+                    android:gravity="center_vertical">
 
-                <androidx.cardview.widget.CardView
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Happy Reading!"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_search"
+                        android:contentDescription="Search"
+                        app:tint="@color/text_secondary" />
+
+                </LinearLayout>
+
+                <!-- Best Deals Section -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="8dp"
-                    app:cardBackgroundColor="@color/card_background">
+                    android:orientation="vertical"
+                    android:layout_marginBottom="32dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Best Deals"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="16dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="8dp"
+                        app:cardBackgroundColor="@color/card_background">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="16dp">
+
+                            <ImageView
+                                android:id="@+id/iv_best_deal_cover"
+                                android:layout_width="80dp"
+                                android:layout_height="120dp"
+                                android:scaleType="centerCrop"
+                                android:background="@color/card_background"
+                                android:contentDescription="Book Cover" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_marginStart="16dp"
+                                android:layout_gravity="center_vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_best_deal_title"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Tuesday Mooney Talks to Ghosts"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/text_primary"
+                                    android:maxLines="2"
+                                    android:ellipsize="end"
+                                    android:layout_marginBottom="8dp" />
+
+                                <TextView
+                                    android:id="@+id/tv_best_deal_author"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Kate Racculia"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/text_secondary"
+                                    android:layout_marginBottom="16dp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btn_best_deal_read"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Baca Buku"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    app:cornerRadius="20dp"
+                                    android:paddingHorizontal="24dp"
+                                    android:paddingVertical="8dp"
+                                    app:backgroundTint="@color/primary_color"
+                                    android:textColor="@android:color/white" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <!-- Top Books Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="32dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:padding="16dp">
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
 
-                        <ImageView
-                            android:id="@+id/iv_best_deal_cover"
-                            android:layout_width="80dp"
-                            android:layout_height="120dp"
-                            android:scaleType="centerCrop"
-                            android:background="@color/card_background"
-                            android:contentDescription="Book Cover" />
-
-                        <LinearLayout
+                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:layout_marginStart="16dp"
-                            android:layout_gravity="center_vertical">
+                            android:text="Top Books"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
 
-                            <TextView
-                                android:id="@+id/tv_best_deal_title"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Tuesday Mooney Talks to Ghosts"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/text_primary"
-                                android:maxLines="2"
-                                android:ellipsize="end"
-                                android:layout_marginBottom="8dp" />
-
-                            <TextView
-                                android:id="@+id/tv_best_deal_author"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Kate Racculia"
-                                android:textSize="14sp"
-                                android:textColor="@color/text_secondary"
-                                android:layout_marginBottom="16dp" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btn_best_deal_read"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Baca Buku"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
-                                app:cornerRadius="20dp"
-                                android:paddingHorizontal="24dp"
-                                android:paddingVertical="8dp"
-                                app:backgroundTint="@color/primary_color"
-                                android:textColor="@android:color/white" />
-
-                        </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="see more"
+                            android:textSize="14sp"
+                            android:textColor="@color/primary_color"
+                            android:clickable="true"
+                            android:focusable="true" />
 
                     </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <!-- First Book Card -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="6dp"
+                            app:cardBackgroundColor="@color/card_background">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <ImageView
+                                    android:id="@+id/iv_top_book_1_cover"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="160dp"
+                                    android:scaleType="centerCrop"
+                                    android:background="@color/card_background"
+                                    android:layout_marginBottom="12dp"
+                                    android:contentDescription="Book Cover" />
+
+                                <TextView
+                                    android:id="@+id/tv_top_book_1_title"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="The Picture of Dorian Gray"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/text_primary"
+                                    android:maxLines="2"
+                                    android:ellipsize="end"
+                                    android:layout_marginBottom="4dp" />
+
+                                <TextView
+                                    android:id="@+id/tv_top_book_1_author"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Oscar Wilde"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/text_secondary"
+                                    android:layout_marginBottom="12dp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btn_top_book_1_read"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Baca Buku"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:cornerRadius="16dp"
+                                    android:paddingVertical="6dp"
+                                    app:backgroundTint="@color/primary_color"
+                                    android:textColor="@android:color/white" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Second Book Card -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="6dp"
+                            app:cardBackgroundColor="@color/card_background">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <ImageView
+                                    android:id="@+id/iv_top_book_2_cover"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="160dp"
+                                    android:scaleType="centerCrop"
+                                    android:background="@color/card_background"
+                                    android:layout_marginBottom="12dp"
+                                    android:contentDescription="Book Cover" />
+
+                                <TextView
+                                    android:id="@+id/tv_top_book_2_title"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="The Catcher in the Rye"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/text_primary"
+                                    android:maxLines="2"
+                                    android:ellipsize="end"
+                                    android:layout_marginBottom="4dp" />
+
+                                <TextView
+                                    android:id="@+id/tv_top_book_2_author"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="J.D. Salinger"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/text_secondary"
+                                    android:layout_marginBottom="12dp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btn_top_book_2_read"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Baca Buku"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:cornerRadius="16dp"
+                                    android:paddingVertical="6dp"
+                                    app:backgroundTint="@color/primary_color"
+                                    android:textColor="@android:color/white" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Latest Books Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="32dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Latest Books"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="see more"
+                            android:textSize="14sp"
+                            android:textColor="@color/primary_color"
+                            android:clickable="true"
+                            android:focusable="true" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <!-- Third Book Card -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="6dp"
+                            app:cardBackgroundColor="@color/card_background">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <ImageView
+                                    android:id="@+id/iv_latest_book_1_cover"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="160dp"
+                                    android:scaleType="centerCrop"
+                                    android:background="@color/card_background"
+                                    android:layout_marginBottom="12dp"
+                                    android:contentDescription="Book Cover" />
+
+                                <TextView
+                                    android:id="@+id/tv_latest_book_1_title"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Wine Dark Sea"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/text_primary"
+                                    android:maxLines="2"
+                                    android:ellipsize="end"
+                                    android:layout_marginBottom="4dp" />
+
+                                <TextView
+                                    android:id="@+id/tv_latest_book_1_author"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Patrick O'Brian"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/text_secondary"
+                                    android:layout_marginBottom="12dp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btn_latest_book_1_read"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Baca Buku"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:cornerRadius="16dp"
+                                    android:paddingVertical="6dp"
+                                    app:backgroundTint="@color/primary_color"
+                                    android:textColor="@android:color/white" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Fourth Book Card -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="6dp"
+                            app:cardBackgroundColor="@color/card_background">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <ImageView
+                                    android:id="@+id/iv_latest_book_2_cover"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="160dp"
+                                    android:scaleType="centerCrop"
+                                    android:background="@color/card_background"
+                                    android:layout_marginBottom="12dp"
+                                    android:contentDescription="Book Cover" />
+
+                                <TextView
+                                    android:id="@+id/tv_latest_book_2_title"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sorrow and Starlight"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/text_primary"
+                                    android:maxLines="2"
+                                    android:ellipsize="end"
+                                    android:layout_marginBottom="4dp" />
+
+                                <TextView
+                                    android:id="@+id/tv_latest_book_2_author"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Karina Sumner-Smith"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/text_secondary"
+                                    android:layout_marginBottom="12dp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btn_latest_book_2_read"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Baca Buku"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:cornerRadius="16dp"
+                                    android:paddingVertical="6dp"
+                                    app:backgroundTint="@color/primary_color"
+                                    android:textColor="@android:color/white" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Upcoming Books Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="32dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Upcoming Books"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="see more"
+                            android:textSize="14sp"
+                            android:textColor="@color/primary_color"
+                            android:clickable="true"
+                            android:focusable="true" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <!-- Fifth Book Card -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="6dp"
+                            app:cardBackgroundColor="@color/card_background">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <ImageView
+                                    android:id="@+id/iv_upcoming_book_1_cover"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="160dp"
+                                    android:scaleType="centerCrop"
+                                    android:background="@color/card_background"
+                                    android:layout_marginBottom="12dp"
+                                    android:contentDescription="Book Cover" />
+
+                                <TextView
+                                    android:id="@+id/tv_upcoming_book_1_title"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Queen of Myth and Monsters"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/text_primary"
+                                    android:maxLines="2"
+                                    android:ellipsize="end"
+                                    android:layout_marginBottom="4dp" />
+
+                                <TextView
+                                    android:id="@+id/tv_upcoming_book_1_author"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Scarlett St. Clair"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/text_secondary"
+                                    android:layout_marginBottom="12dp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btn_upcoming_book_1_read"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Baca Buku"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:cornerRadius="16dp"
+                                    android:paddingVertical="6dp"
+                                    app:backgroundTint="@color/primary_color"
+                                    android:textColor="@android:color/white" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Sixth Book Card -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="6dp"
+                            app:cardBackgroundColor="@color/card_background">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <ImageView
+                                    android:id="@+id/iv_upcoming_book_2_cover"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="160dp"
+                                    android:scaleType="centerCrop"
+                                    android:background="@color/card_background"
+                                    android:layout_marginBottom="12dp"
+                                    android:contentDescription="Book Cover" />
+
+                                <TextView
+                                    android:id="@+id/tv_upcoming_book_2_title"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sorrow and Starlight"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/text_primary"
+                                    android:maxLines="2"
+                                    android:ellipsize="end"
+                                    android:layout_marginBottom="4dp" />
+
+                                <TextView
+                                    android:id="@+id/tv_upcoming_book_2_author"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Karina Sumner-Smith"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/text_secondary"
+                                    android:layout_marginBottom="12dp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btn_upcoming_book_2_read"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Baca Buku"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    app:cornerRadius="16dp"
+                                    android:paddingVertical="6dp"
+                                    app:backgroundTint="@color/primary_color"
+                                    android:textColor="@android:color/white" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
 
-            <!-- Top Books Section -->
+        </ScrollView>
+
+        <!-- Fixed Bottom Navigation Bar -->
+        <LinearLayout
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:elevation="8dp">
+
+            <!-- Home -->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:orientation="vertical"
-                android:layout_marginBottom="32dp">
+                android:gravity="center"
+                android:clickable="true"
+                android:background="#E3F2FD"
+                android:focusable="true">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_home" />
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="16dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Top Books"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/text_primary" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="see more"
-                        android:textSize="14sp"
-                        android:textColor="@color/primary_color"
-                        android:clickable="true"
-                        android:focusable="true" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="2">
-
-                    <!-- First Book Card -->
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="8dp"
-                        app:cardCornerRadius="16dp"
-                        app:cardElevation="6dp"
-                        app:cardBackgroundColor="@color/card_background">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-
-                            <ImageView
-                                android:id="@+id/iv_top_book_1_cover"
-                                android:layout_width="match_parent"
-                                android:layout_height="160dp"
-                                android:scaleType="centerCrop"
-                                android:background="@color/card_background"
-                                android:layout_marginBottom="12dp"
-                                android:contentDescription="Book Cover" />
-
-                            <TextView
-                                android:id="@+id/tv_top_book_1_title"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="The Picture of Dorian Gray"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/text_primary"
-                                android:maxLines="2"
-                                android:ellipsize="end"
-                                android:layout_marginBottom="4dp" />
-
-                            <TextView
-                                android:id="@+id/tv_top_book_1_author"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Oscar Wilde"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_secondary"
-                                android:layout_marginBottom="12dp" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btn_top_book_1_read"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Baca Buku"
-                                android:textSize="12sp"
-                                android:textStyle="bold"
-                                app:cornerRadius="16dp"
-                                android:paddingVertical="6dp"
-                                app:backgroundTint="@color/primary_color"
-                                android:textColor="@android:color/white" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <!-- Second Book Card -->
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="8dp"
-                        app:cardCornerRadius="16dp"
-                        app:cardElevation="6dp"
-                        app:cardBackgroundColor="@color/card_background">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-
-                            <ImageView
-                                android:id="@+id/iv_top_book_2_cover"
-                                android:layout_width="match_parent"
-                                android:layout_height="160dp"
-                                android:scaleType="centerCrop"
-                                android:background="@color/card_background"
-                                android:layout_marginBottom="12dp"
-                                android:contentDescription="Book Cover" />
-
-                            <TextView
-                                android:id="@+id/tv_top_book_2_title"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="The Catcher in the Rye"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/text_primary"
-                                android:maxLines="2"
-                                android:ellipsize="end"
-                                android:layout_marginBottom="4dp" />
-
-                            <TextView
-                                android:id="@+id/tv_top_book_2_author"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="J.D. Salinger"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_secondary"
-                                android:layout_marginBottom="12dp" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btn_top_book_2_read"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Baca Buku"
-                                android:textSize="12sp"
-                                android:textStyle="bold"
-                                app:cornerRadius="16dp"
-                                android:paddingVertical="6dp"
-                                app:backgroundTint="@color/primary_color"
-                                android:textColor="@android:color/white" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
+                    android:text="Home"
+                    android:textSize="12sp"
+                    android:textColor="#2196F3"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
-            <!-- Latest Books Section -->
+            <!-- Categories -->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:orientation="vertical"
-                android:layout_marginBottom="32dp">
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_category" />
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="16dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Latest Books"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/text_primary" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="see more"
-                        android:textSize="14sp"
-                        android:textColor="@color/primary_color"
-                        android:clickable="true"
-                        android:focusable="true" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="2">
-
-                    <!-- Third Book Card -->
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="8dp"
-                        app:cardCornerRadius="16dp"
-                        app:cardElevation="6dp"
-                        app:cardBackgroundColor="@color/card_background">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-
-                            <ImageView
-                                android:id="@+id/iv_latest_book_1_cover"
-                                android:layout_width="match_parent"
-                                android:layout_height="160dp"
-                                android:scaleType="centerCrop"
-                                android:background="@color/card_background"
-                                android:layout_marginBottom="12dp"
-                                android:contentDescription="Book Cover" />
-
-                            <TextView
-                                android:id="@+id/tv_latest_book_1_title"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Wine Dark Sea"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/text_primary"
-                                android:maxLines="2"
-                                android:ellipsize="end"
-                                android:layout_marginBottom="4dp" />
-
-                            <TextView
-                                android:id="@+id/tv_latest_book_1_author"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Patrick O'Brian"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_secondary"
-                                android:layout_marginBottom="12dp" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btn_latest_book_1_read"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Baca Buku"
-                                android:textSize="12sp"
-                                android:textStyle="bold"
-                                app:cornerRadius="16dp"
-                                android:paddingVertical="6dp"
-                                app:backgroundTint="@color/primary_color"
-                                android:textColor="@android:color/white" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <!-- Fourth Book Card -->
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="8dp"
-                        app:cardCornerRadius="16dp"
-                        app:cardElevation="6dp"
-                        app:cardBackgroundColor="@color/card_background">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-
-                            <ImageView
-                                android:id="@+id/iv_latest_book_2_cover"
-                                android:layout_width="match_parent"
-                                android:layout_height="160dp"
-                                android:scaleType="centerCrop"
-                                android:background="@color/card_background"
-                                android:layout_marginBottom="12dp"
-                                android:contentDescription="Book Cover" />
-
-                            <TextView
-                                android:id="@+id/tv_latest_book_2_title"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Sorrow and Starlight"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/text_primary"
-                                android:maxLines="2"
-                                android:ellipsize="end"
-                                android:layout_marginBottom="4dp" />
-
-                            <TextView
-                                android:id="@+id/tv_latest_book_2_author"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Karina Sumner-Smith"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_secondary"
-                                android:layout_marginBottom="12dp" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btn_latest_book_2_read"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Baca Buku"
-                                android:textSize="12sp"
-                                android:textStyle="bold"
-                                app:cornerRadius="16dp"
-                                android:paddingVertical="6dp"
-                                app:backgroundTint="@color/primary_color"
-                                android:textColor="@android:color/white" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
+                    android:text="Categories"
+                    android:textSize="12sp"
+                    android:textColor="#666666" />
 
             </LinearLayout>
 
-            <!-- Upcoming Books Section -->
+            <!-- Riwayat (Active) -->
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:orientation="vertical"
-                android:layout_marginBottom="32dp">
+                android:gravity="center"
+                android:focusable="true">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_riwayat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="16dp">
+                    android:text="Riwayat"
+                    android:textSize="12sp"
+                    android:textColor="#666666" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Upcoming Books"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/text_primary" />
+            </LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="see more"
-                        android:textSize="14sp"
-                        android:textColor="@color/primary_color"
-                        android:clickable="true"
-                        android:focusable="true" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
 
-                </LinearLayout>
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_notification" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="2">
+                    android:text="Notifikasi"
+                    android:textSize="12sp"
+                    android:textColor="#666666" />
 
-                    <!-- Fifth Book Card -->
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="8dp"
-                        app:cardCornerRadius="16dp"
-                        app:cardElevation="6dp"
-                        app:cardBackgroundColor="@color/card_background">
+            </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="16dp">
+            <!-- Account -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
 
-                            <ImageView
-                                android:id="@+id/iv_upcoming_book_1_cover"
-                                android:layout_width="match_parent"
-                                android:layout_height="160dp"
-                                android:scaleType="centerCrop"
-                                android:background="@color/card_background"
-                                android:layout_marginBottom="12dp"
-                                android:contentDescription="Book Cover" />
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_account" />
 
-                            <TextView
-                                android:id="@+id/tv_upcoming_book_1_title"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Queen of Myth and Monsters"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/text_primary"
-                                android:maxLines="2"
-                                android:ellipsize="end"
-                                android:layout_marginBottom="4dp" />
-
-                            <TextView
-                                android:id="@+id/tv_upcoming_book_1_author"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Scarlett St. Clair"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_secondary"
-                                android:layout_marginBottom="12dp" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btn_upcoming_book_1_read"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Baca Buku"
-                                android:textSize="12sp"
-                                android:textStyle="bold"
-                                app:cornerRadius="16dp"
-                                android:paddingVertical="6dp"
-                                app:backgroundTint="@color/primary_color"
-                                android:textColor="@android:color/white" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <!-- Sixth Book Card -->
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="8dp"
-                        app:cardCornerRadius="16dp"
-                        app:cardElevation="6dp"
-                        app:cardBackgroundColor="@color/card_background">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-
-                            <ImageView
-                                android:id="@+id/iv_upcoming_book_2_cover"
-                                android:layout_width="match_parent"
-                                android:layout_height="160dp"
-                                android:scaleType="centerCrop"
-                                android:background="@color/card_background"
-                                android:layout_marginBottom="12dp"
-                                android:contentDescription="Book Cover" />
-
-                            <TextView
-                                android:id="@+id/tv_upcoming_book_2_title"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Sorrow and Starlight"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/text_primary"
-                                android:maxLines="2"
-                                android:ellipsize="end"
-                                android:layout_marginBottom="4dp" />
-
-                            <TextView
-                                android:id="@+id/tv_upcoming_book_2_author"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Karina Sumner-Smith"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_secondary"
-                                android:layout_marginBottom="12dp" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btn_upcoming_book_2_read"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Baca Buku"
-                                android:textSize="12sp"
-                                android:textStyle="bold"
-                                app:cornerRadius="16dp"
-                                android:paddingVertical="6dp"
-                                app:backgroundTint="@color/primary_color"
-                                android:textColor="@android:color/white" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    android:textSize="12sp"
+                    android:textColor="#666666" />
 
             </LinearLayout>
 
         </LinearLayout>
 
-    </ScrollView>
-
-    <!-- Fixed Bottom Navigation Bar -->
-    <LinearLayout
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:background="#FFFFFF"
-        android:elevation="8dp">
-
-        <!-- Home -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:clickable="true"
-            android:background="#E3F2FD"
-            android:focusable="true">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_home" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Home"
-                android:textSize="12sp"
-                android:textColor="#2196F3"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <!-- Categories -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:clickable="true"
-            android:focusable="true">
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_category" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Categories"
-                android:textSize="12sp"
-                android:textColor="#666666" />
-
-        </LinearLayout>
-
-        <!-- Riwayat (Active) -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:focusable="true">
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_riwayat" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Riwayat"
-                android:textSize="12sp"
-                android:textColor="#666666" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:clickable="true"
-            android:focusable="true">
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_notification" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Notifikasi"
-                android:textSize="12sp"
-                android:textColor="#666666" />
-
-        </LinearLayout>
-
-        <!-- Account -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:clickable="true"
-            android:focusable="true">
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_account" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Profile"
-                android:textSize="12sp"
-                android:textColor="#666666" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-</RelativeLayout>
+    </RelativeLayout>

@@ -2,6 +2,7 @@ package com.example.yourapp.database
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
@@ -18,6 +19,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
+        // Create the user table
         val CREATE_USER_TABLE = "CREATE TABLE $TABLE_USER (" +
                 "$COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "$COLUMN_NAME TEXT," +
@@ -27,10 +29,13 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+        // Drop older table if exists
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_USER")
+        // Create new table
         onCreate(db)
     }
 
+    // Method to insert user
     fun insertUser(fullName: String, email: String, password: String): Long {
         val db = writableDatabase
         val values = ContentValues().apply {
@@ -38,15 +43,33 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             put(COLUMN_EMAIL, email)
             put(COLUMN_PASSWORD, password)
         }
-        return db.insert(TABLE_USER, null, values)
+        // Insert the data into the database and return the row ID
+        return db.insert(TABLE_USER, null, values).also {
+            db.close()  // Ensure the database is closed after the insert
+        }
     }
 
+    // Method to check if the user exists and validate credentials
+    fun isValidUser(email: String, password: String): Boolean {
+        val db = readableDatabase
+        val query = "SELECT * FROM $TABLE_USER WHERE $COLUMN_EMAIL = ? AND $COLUMN_PASSWORD = ?"
+        val cursor: Cursor = db.rawQuery(query, arrayOf(email, password))
+
+        val isValid = cursor.count > 0
+        cursor.close()  // Always close the cursor
+        db.close()  // Always close the database
+        return isValid
+    }
+
+    // Method to check if email already exists
     fun isEmailExists(email: String): Boolean {
         val db = readableDatabase
         val query = "SELECT * FROM $TABLE_USER WHERE $COLUMN_EMAIL = ?"
-        val cursor = db.rawQuery(query, arrayOf(email))
+        val cursor: Cursor = db.rawQuery(query, arrayOf(email))
+
         val exists = cursor.count > 0
         cursor.close()
+        db.close()
         return exists
     }
 }

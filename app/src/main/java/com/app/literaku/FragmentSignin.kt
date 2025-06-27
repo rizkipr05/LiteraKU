@@ -8,10 +8,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.app.literaku.databinding.FragmentSigninBinding
+import com.example.yourapp.database.DatabaseHelper
 
 class FragmentSignin : Fragment() {
 
     private lateinit var binding: FragmentSigninBinding
+    private lateinit var dbHelper: DatabaseHelper
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,23 +22,8 @@ class FragmentSignin : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentSigninBinding.inflate(inflater, container, false)
 
-        // Retrieve email and password passed from FragmentSignUp
-        arguments?.let {
-            val userEmail = it.getString("userEmail")
-            val userPassword = it.getString("userPassword")
-
-            // Check for null or empty values before using them
-            if (userEmail.isNullOrEmpty() || userPassword.isNullOrEmpty()) {
-                Toast.makeText(requireContext(), "Invalid credentials received", Toast.LENGTH_SHORT).show()
-            } else {
-                // Optionally, show email and password in Toast for testing
-                Toast.makeText(requireContext(), "Email: $userEmail, Password: $userPassword", Toast.LENGTH_SHORT).show()
-
-                // Handle sign-in logic here (for now, we assume it's always successful)
-                // Start HomeActivity after successful login
-                loginUser(userEmail, userPassword)
-            }
-        }
+        // Initialize the database helper
+        dbHelper = DatabaseHelper(requireContext())
 
         // Set click listener for the "Sign In" button
         binding.signInButton.setOnClickListener {
@@ -55,20 +42,26 @@ class FragmentSignin : Fragment() {
     }
 
     private fun loginUser(email: String, password: String) {
-        // Validate the email and password (you can replace this with actual logic)
+        // Validate the email and password (now checking the database)
         if (email.isNotEmpty() && password.isNotEmpty()) {
-            // If credentials are valid, navigate to HomeActivity
-            Toast.makeText(requireContext(), "Login successful", Toast.LENGTH_SHORT).show()
+            // Check if the email and password exist in the database
+            if (dbHelper.isValidUser(email, password)) {
+                // If credentials are valid, navigate to HomeActivity
+                Toast.makeText(requireContext(), "Login successful", Toast.LENGTH_SHORT).show()
 
-            // Navigate to HomeActivity
-            val intent = Intent(requireContext(), HomeActivity::class.java)
-            startActivity(intent)
+                // Navigate to HomeActivity
+                val intent = Intent(requireContext(), HomeActivity::class.java)
+                startActivity(intent)
 
-            // Optionally, finish the current activity/fragment if you don't want the user to return to the sign-in page
-            activity?.finish()
+                // Optionally, finish the current activity/fragment if you don't want the user to return to the sign-in page
+                activity?.finish()
+            } else {
+                // If credentials are invalid
+                Toast.makeText(requireContext(), "Invalid email or password", Toast.LENGTH_SHORT).show()
+            }
         } else {
-            // If credentials are invalid
-            Toast.makeText(requireContext(), "Invalid email or password", Toast.LENGTH_SHORT).show()
+            // Handle empty fields
+            Toast.makeText(requireContext(), "Please enter both email and password", Toast.LENGTH_SHORT).show()
         }
     }
 }
