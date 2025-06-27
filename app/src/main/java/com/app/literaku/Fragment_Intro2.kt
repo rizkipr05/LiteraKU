@@ -21,7 +21,7 @@ class Fragment_Intro2 : Fragment() {
         // Logika untuk tombol Sign Up
         binding.btnSignUp.setOnClickListener {
             // Ganti fragment tanpa container statis
-            val fragment = FragmentSign_up()
+            val fragment = FragmentSignUp()
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
             transaction.replace(android.R.id.content, fragment)  // Menggunakan android.R.id.content sebagai wadah
             transaction.addToBackStack(null)  // Tambahkan ke back stack agar bisa kembali ke fragment sebelumnya
