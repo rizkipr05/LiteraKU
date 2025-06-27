@@ -14,6 +14,9 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        // Set fragment home sebagai default
+        val binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val kategoriButton = findViewById<LinearLayout>(R.id.kategoriButton)
 
@@ -25,5 +28,15 @@ class HomeActivity : AppCompatActivity() {
                 .addToBackStack(null)
                 .commit()
         }
+
+        // event "img_menu2"
+        binding.imageView4.setOnClickListener {
+
+            // buka "Menu2Fragment"
+            supportFragmentManager.beginTransaction().replace(R.id.fragment_container, NotifikasiFragment()).commit()
+        }
+
+
+
     }
 }
