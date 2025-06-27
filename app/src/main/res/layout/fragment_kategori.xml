@@ -320,6 +320,7 @@
 
         <!-- Categories -->
         <LinearLayout
+            android:id="@+id/kategori"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -329,7 +330,7 @@
             android:clickable="true">
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/kategoriImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_category" />

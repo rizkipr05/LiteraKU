@@ -1,8 +1,10 @@
 package com.app.literaku
 
 import android.os.Bundle
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.app.literaku.databinding.ActivityHomeBinding
+import com.app.literaku.KategoriFragment
 
 class HomeActivity : AppCompatActivity() {
 
@@ -13,6 +15,15 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Handle any logic for your HomeActivity here
+        val kategoriButton = findViewById<LinearLayout>(R.id.kategori)
+
+        kategoriButton.setOnClickListener {
+            // Contoh: Pindah ke fragment
+            val fragment = KategoriFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
     }
 }
