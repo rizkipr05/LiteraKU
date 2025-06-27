@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     android:background="@color/background_primary">
 
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation" />
+
     <!-- Main ScrollView Content -->
     <ScrollView
         android:id="@+id/main_scroll_view"
