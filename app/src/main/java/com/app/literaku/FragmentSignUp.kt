@@ -1,4 +1,4 @@
-package com.example.yourapp.ui.signup
+package com.app.literaku
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.yourapp.database.DatabaseHelper
-import com.example.yourapp.databinding.FragmentSignUpBinding
+import com.app.literaku.databinding.FragmentSignUpBinding
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
