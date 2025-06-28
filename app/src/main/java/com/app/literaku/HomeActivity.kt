@@ -31,11 +31,22 @@ class HomeActivity : AppCompatActivity() {
                 androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE
             )
         }
+        // Kategori
+        binding.bottomNavigation.findViewById<LinearLayout>(R.id.layout_categories).setOnClickListener {
+            updateNavbarSelection(R.id.layout_categories)
+            binding.mainScrollView.visibility = View.GONE
+            val fragment = KategoriFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
     }
 
     private fun updateNavbarSelection(selectedId: Int) {
         val navItems = listOf(
             R.id.layout_home,
+            R.id.layout_categories,
         )
 
         for (id in navItems) {
