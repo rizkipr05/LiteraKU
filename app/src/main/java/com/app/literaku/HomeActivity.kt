@@ -14,16 +14,5 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val kategoriButton = findViewById<LinearLayout>(R.id.kategori)
-
-        kategoriButton.setOnClickListener {
-            // Contoh: Pindah ke fragment
-            val fragment = KategoriFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, fragment)
-                .addToBackStack(null)
-                .commit()
-        }
     }
 }
