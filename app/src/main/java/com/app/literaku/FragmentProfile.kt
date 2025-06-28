@@ -2,13 +2,11 @@ package com.app.literaku
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
+import androidx.fragment.app.Fragment
 
 class FragmentProfile : Fragment() {
 
@@ -43,7 +41,6 @@ class FragmentProfile : Fragment() {
 
     private fun initializeViews(view: View) {
         // Find TextViews based on your XML layout
-        // Assuming you have TextViews with these IDs in your layout
         nameTextView = view.findViewById(R.id.nameTextView) // You need to add ID to your TextView in XML
         emailTextView = view.findViewById(R.id.emailTextView) // You need to add ID to your TextView in XML
         passwordTextView = view.findViewById(R.id.passwordTextView) // You need to add ID to your TextView in XML
@@ -78,9 +75,20 @@ class FragmentProfile : Fragment() {
 
         // Edit button click listener
         editButton.setOnClickListener {
-            // Handle edit profile functionality
-            Toast.makeText(requireContext(), "Edit profile feature coming soon", Toast.LENGTH_SHORT).show()
+            // Handle edit profile functionality and navigate to FragmentEditProfile
+            openEditProfileFragment()
         }
+    }
+
+    private fun openEditProfileFragment() {
+        // Create an instance of FragmentEditProfile
+        val fragmentEditProfile = FragmentEditProfile()
+
+        // Start a FragmentTransaction to replace FragmentProfile with FragmentEditProfile
+        val transaction = parentFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container, fragmentEditProfile)  // Make sure to use the correct container ID
+        transaction.addToBackStack(null)  // This allows users to navigate back to the previous fragment
+        transaction.commit()
     }
 
     private fun logout() {
@@ -92,7 +100,7 @@ class FragmentProfile : Fragment() {
 
         // Navigate back to login screen
         // You can customize this based on your app structure
-        val intent = Intent(requireContext(), SplashActivity::class.java) // Assuming MainActivity has login
+        val intent = Intent(requireContext(), SplashActivity::class.java) // Assuming SplashActivity has login
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
     }
