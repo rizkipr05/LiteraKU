@@ -41,12 +41,23 @@ class HomeActivity : AppCompatActivity() {
                 .addToBackStack(null)
                 .commit()
         }
+        // Riwayat
+        binding.bottomNavigation.findViewById<LinearLayout>(R.id.layout_riwayat).setOnClickListener {
+            updateNavbarSelection(R.id.layout_riwayat)
+            binding.mainScrollView.visibility = View.GONE
+            val fragment = RiwayatFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
     }
 
     private fun updateNavbarSelection(selectedId: Int) {
         val navItems = listOf(
             R.id.layout_home,
             R.id.layout_categories,
+            R.id.layout_riwayat,
         )
 
         for (id in navItems) {
