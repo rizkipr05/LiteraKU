@@ -15,7 +15,7 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val kategoriButton = findViewById<LinearLayout>(R.id.kategori)
+        val kategoriButton = findViewById<LinearLayout>(R.id.layout_categories)
 
         kategoriButton.setOnClickListener {
             // Contoh: Pindah ke fragment
