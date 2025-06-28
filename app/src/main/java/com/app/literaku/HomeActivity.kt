@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.app.literaku.databinding.ActivityHomeBinding
+import android.view.View
+
 
 
 class HomeActivity : AppCompatActivity() {
