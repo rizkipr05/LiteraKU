@@ -69,6 +69,13 @@ class HomeActivity : AppCompatActivity() {
         binding.bottomNavigation.findViewById<LinearLayout>(R.id.layout_notifikasi).setOnClickListener {
             updateNavbarSelection(R.id.layout_notifikasi)
             binding.mainScrollView.visibility = View.GONE
+
+            // Hapus semua fragment sebelum berpindah
+            supportFragmentManager.popBackStack(
+                null,
+                androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE
+            )
+
             val fragment = NotifikasiFragment()
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, fragment)
