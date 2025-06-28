@@ -40,6 +40,14 @@ class FragmentSignin : Fragment() {
             }
         }
 
+        binding.signUpLink.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(android.R.id.content, FragmentSignUp()) // GANTI ID fragment container
+                .addToBackStack(null)
+                .commit()
+        }
+
+
         return binding.root
     }
 
