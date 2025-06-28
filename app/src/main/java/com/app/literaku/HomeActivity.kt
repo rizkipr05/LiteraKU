@@ -71,6 +71,13 @@ class HomeActivity : AppCompatActivity() {
                 .addToBackStack(null)
                 .commit()
         }
+        // Kembali otomatis ke home jika backstack kosong
+        supportFragmentManager.addOnBackStackChangedListener {
+            if (supportFragmentManager.backStackEntryCount == 0) {
+                binding.mainScrollView.visibility = View.VISIBLE
+                updateNavbarSelection(R.id.layout_home)
+            }
+        }
 
     }
 
