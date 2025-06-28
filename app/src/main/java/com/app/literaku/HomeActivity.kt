@@ -61,6 +61,16 @@ class HomeActivity : AppCompatActivity() {
                 .addToBackStack(null)
                 .commit()
         }
+        // Profil
+        binding.bottomNavigation.findViewById<LinearLayout>(R.id.layout_profil).setOnClickListener {
+            updateNavbarSelection(R.id.layout_profil)
+            binding.mainScrollView.visibility = View.GONE
+            val fragment =FragmentProfile()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
 
     }
 
@@ -70,6 +80,7 @@ class HomeActivity : AppCompatActivity() {
             R.id.layout_categories,
             R.id.layout_riwayat,
             R.id.layout_notifikasi,
+            R.id.layout_profil
         )
 
         for (id in navItems) {
