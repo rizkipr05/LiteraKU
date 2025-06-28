@@ -1,59 +1,104 @@
 package com.app.literaku
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [FragmentProfile.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FragmentProfile : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var sharedPreferencesManager: SharedPreferencesManager
+    private lateinit var nameTextView: TextView
+    private lateinit var emailTextView: TextView
+    private lateinit var passwordTextView: TextView
+    private lateinit var logoutButton: Button
+    private lateinit var editButton: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+
+        // Initialize SharedPreferencesManager
+        sharedPreferencesManager = SharedPreferencesManager(requireContext())
+
+        // Initialize views
+        initializeViews(view)
+
+        // Load user data
+        loadUserData()
+
+        // Set click listeners
+        setClickListeners()
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FragmentProfile.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FragmentProfile().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun initializeViews(view: View) {
+        // Find TextViews based on your XML layout
+        // Assuming you have TextViews with these IDs in your layout
+        nameTextView = view.findViewById(R.id.nameTextView) // You need to add ID to your TextView in XML
+        emailTextView = view.findViewById(R.id.emailTextView) // You need to add ID to your TextView in XML
+        passwordTextView = view.findViewById(R.id.passwordTextView) // You need to add ID to your TextView in XML
+        logoutButton = view.findViewById(R.id.btn_logout)
+        editButton = view.findViewById(R.id.btn_edit)
+    }
+
+    private fun loadUserData() {
+        // Check if user is logged in
+        if (sharedPreferencesManager.isLoggedIn()) {
+            // Get user data from SharedPreferences
+            val userName = sharedPreferencesManager.getUserName() ?: "Unknown"
+            val userEmail = sharedPreferencesManager.getUserEmail() ?: "Unknown"
+            val userPassword = sharedPreferencesManager.getUserPassword() ?: "Unknown"
+
+            // Display user data
+            nameTextView.text = userName
+            emailTextView.text = userEmail
+            passwordTextView.text = "**********" // For security, show masked password
+        } else {
+            // If user is not logged in, redirect to login
+            Toast.makeText(requireContext(), "Please log in first", Toast.LENGTH_SHORT).show()
+            // You can redirect to login fragment/activity here
+        }
+    }
+
+    private fun setClickListeners() {
+        // Logout button click listener
+        logoutButton.setOnClickListener {
+            logout()
+        }
+
+        // Edit button click listener
+        editButton.setOnClickListener {
+            // Handle edit profile functionality
+            Toast.makeText(requireContext(), "Edit profile feature coming soon", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun logout() {
+        // Clear user session
+        sharedPreferencesManager.clearUserSession()
+
+        // Show logout message
+        Toast.makeText(requireContext(), "Logged out successfully", Toast.LENGTH_SHORT).show()
+
+        // Navigate back to login screen
+        // You can customize this based on your app structure
+        val intent = Intent(requireContext(), SplashActivity::class.java) // Assuming MainActivity has login
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+    }
+
+    // Method to refresh user data (call this if user data is updated)
+    fun refreshUserData() {
+        loadUserData()
     }
 }

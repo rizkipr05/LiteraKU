@@ -14,6 +14,7 @@ class FragmentSignin : Fragment() {
 
     private lateinit var binding: FragmentSigninBinding
     private lateinit var dbHelper: DatabaseHelper
+    private lateinit var sharedPreferencesManager: SharedPreferencesManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,8 +23,9 @@ class FragmentSignin : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentSigninBinding.inflate(inflater, container, false)
 
-        // Initialize the database helper
+        // Initialize the database helper and shared preferences
         dbHelper = DatabaseHelper(requireContext())
+        sharedPreferencesManager = SharedPreferencesManager(requireContext())
 
         // Set click listener for the "Sign In" button
         binding.signInButton.setOnClickListener {
@@ -44,9 +46,12 @@ class FragmentSignin : Fragment() {
     private fun loginUser(email: String, password: String) {
         // Validate the email and password (now checking the database)
         if (email.isNotEmpty() && password.isNotEmpty()) {
-            // Check if the email and password exist in the database
-            if (dbHelper.isValidUser(email, password)) {
-                // If credentials are valid, navigate to HomeActivity
+            // Check if the email and password exist in the database and get user data
+            val userData = dbHelper.getUserData(email, password)
+
+            if (userData != null) {
+                // If credentials are valid, save user session and navigate to HomeActivity
+                sharedPreferencesManager.saveUserSession(userData)
                 Toast.makeText(requireContext(), "Login successful", Toast.LENGTH_SHORT).show()
 
                 // Navigate to HomeActivity
