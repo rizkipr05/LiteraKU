@@ -6,6 +6,13 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
+data class User(
+    val id: Int,
+    val fullName: String,
+    val email: String,
+    val password: String
+)
+
 class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
@@ -59,6 +66,26 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         cursor.close()  // Always close the cursor
         db.close()  // Always close the database
         return isValid
+    }
+
+    // Method to get user data by email and password
+    fun getUserData(email: String, password: String): User? {
+        val db = readableDatabase
+        val query = "SELECT * FROM $TABLE_USER WHERE $COLUMN_EMAIL = ? AND $COLUMN_PASSWORD = ?"
+        val cursor: Cursor = db.rawQuery(query, arrayOf(email, password))
+
+        var user: User? = null
+        if (cursor.moveToFirst()) {
+            user = User(
+                id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID)),
+                fullName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NAME)),
+                email = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_EMAIL)),
+                password = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PASSWORD))
+            )
+        }
+        cursor.close()
+        db.close()
+        return user
     }
 
     // Method to check if email already exists

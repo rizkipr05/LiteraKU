@@ -1,28 +1,52 @@
 package com.app.literaku
 
-import android.content.Intent
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
-import androidx.fragment.app.Fragment
-import com.example.yourapp.database.DatabaseHelper
 
+// TODO: Rename parameter arguments, choose names that match
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
+
+/**
+ * A simple [Fragment] subclass.
+ * Use the [FragmentProfile.newInstance] factory method to
+ * create an instance of this fragment.
+ */
 class FragmentProfile : Fragment() {
+    // TODO: Rename and change types of parameters
+    private var param1: String? = null
+    private var param2: String? = null
 
-    private lateinit var dbHelper: DatabaseHelper
-    private lateinit var emailEditText: EditText
-    private lateinit var passwordEditText: EditText
-    private lateinit var loginButton: Button
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            param1 = it.getString(ARG_PARAM1)
+            param2 = it.getString(ARG_PARAM2)
+        }
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_profile, container, false)
+    }
 
     companion object {
-        // Define arguments keys for passing data to the fragment
-        private const val ARG_PARAM1 = "param1"
-        private const val ARG_PARAM2 = "param2"
-
+        /**
+         * Use this factory method to create a new instance of
+         * this fragment using the provided parameters.
+         *
+         * @param param1 Parameter 1.
+         * @param param2 Parameter 2.
+         * @return A new instance of fragment FragmentProfile.
+         */
+        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             FragmentProfile().apply {
@@ -31,60 +55,5 @@ class FragmentProfile : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // Inisialisasi DatabaseHelper
-        dbHelper = DatabaseHelper(requireContext())
-
-        // Memastikan arguments tidak null sebelum mengambil nilai parameter
-        arguments?.let { args ->
-            val param1 = args.getString(ARG_PARAM1)
-            val param2 = args.getString(ARG_PARAM2)
-            // Gunakan param1 dan param2 jika diperlukan
-        }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val rootView = inflater.inflate(R.layout.fragment_profile, container, false)
-
-        emailEditText = rootView.findViewById(R.id.editTextEmail)  // EditText for email
-        passwordEditText = rootView.findViewById(R.id.editTextPassword)  // EditText for password
-        loginButton = rootView.findViewById(R.id.btnLogin)  // Login button
-
-        // Set up login button click listener
-        loginButton.setOnClickListener {
-            val email = emailEditText.text.toString()
-            val password = passwordEditText.text.toString()
-
-            if (email.isNotEmpty() && password.isNotEmpty()) {
-                if (dbHelper.isValidUser(email, password)) {
-                    // If valid user, navigate to profile page
-                    navigateToProfile()
-                } else {
-                    // Show error if credentials are incorrect
-                    Toast.makeText(requireContext(), "Invalid email or password", Toast.LENGTH_SHORT).show()
-                }
-            } else {
-                Toast.makeText(requireContext(), "Please enter email and password", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-        return rootView
-    }
-
-    // Navigate to profile page (This is where you can display the profile content)
-    private fun navigateToProfile() {
-        // Show a toast to simulate navigation (could be replaced with actual navigation logic)
-        Toast.makeText(requireContext(), "Login successful!", Toast.LENGTH_SHORT).show()
-
-        // Example navigation to a new activity after login
-        val intent = Intent(requireContext(), FragmentProfile::class.java)
-        startActivity(intent)
     }
 }

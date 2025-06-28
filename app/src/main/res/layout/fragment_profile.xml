@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:background="#F5F5F5">
 
+    <!-- Status Bar -->
+
     <!-- Main Content -->
     <ScrollView
         android:layout_width="match_parent"
@@ -30,15 +32,16 @@
                 android:gravity="center"
                 android:layout_marginBottom="32dp" />
 
-            <!-- Profile Image -->
+
+
+            <!-- Name Field -->
+
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
                 tools:src="@tools:sample/avatars" />
 
-            <!-- Name Field -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,7 +69,7 @@
 
             </LinearLayout>
 
-            <!-- Email Field (Display) -->
+            <!-- Email Field -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -94,7 +97,7 @@
 
             </LinearLayout>
 
-            <!-- Password Field (Display) -->
+            <!-- Password Field -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -151,104 +154,44 @@
 
             </LinearLayout>
 
-            <!-- Login Section Divider -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#CCCCCC"
-                android:layout_marginVertical="24dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Login Information"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:gravity="center"
-                android:layout_marginBottom="24dp" />
-
-            <!-- Email Field (Editable) -->
-            <EditText
-                android:id="@+id/editTextEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter your email"
-                android:inputType="textEmailAddress"
-                android:layout_marginBottom="16dp"
-                android:padding="16dp"
-                android:background="@android:drawable/edit_text" />
-
-            <!-- Password Field (Editable) -->
-            <EditText
-                android:id="@+id/editTextPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter your password"
-                android:inputType="textPassword"
-                android:layout_marginBottom="32dp"
-                android:padding="16dp"
-                android:background="@android:drawable/edit_text" />
-
             <!-- Action Buttons -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:gravity="center"
                 android:layout_marginBottom="32dp">
 
-                <!-- Login Button -->
+                <!-- Edit Button -->
                 <Button
-                    android:id="@+id/btnLogin"
-                    android:layout_width="match_parent"
+                    android:id="@+id/btn_edit"
+                    android:layout_width="0dp"
                     android:layout_height="48dp"
-                    android:text="Login"
+                    android:layout_weight="1"
+                    android:text="Edit"
                     android:textColor="@android:color/white"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:background="@android:color/black"
-                    android:layout_marginBottom="16dp" />
+                    android:layout_marginEnd="8dp"
+                    android:clickable="true"
+                    android:focusable="true" />
 
-                <!-- Profile Action Buttons -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <!-- Edit Button -->
-                    <Button
-                        android:id="@+id/btn_edit"
-                        android:layout_width="0dp"
-                        android:layout_height="48dp"
-                        android:layout_weight="1"
-                        android:text="Edit"
-                        android:textColor="@android:color/white"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:background="@android:color/black"
-                        android:layout_marginEnd="8dp"
-                        android:clickable="true"
-                        android:focusable="true" />
-
-                    <!-- Log out Button -->
-                    <Button
-                        android:id="@+id/btn_logout"
-                        android:layout_width="0dp"
-                        android:layout_height="48dp"
-                        android:layout_weight="1"
-                        android:text="Log out"
-                        android:textColor="@android:color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:background="@android:color/transparent"
-                        android:strokeColor="@android:color/black"
-                        android:layout_marginStart="8dp"
-                        android:clickable="true"
-                        android:focusable="true" />
-
-                </LinearLayout>
+                <!-- Log out Button -->
+                <Button
+                    android:id="@+id/btn_logout"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="Log out"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:background="@android:color/transparent"
+                    android:strokeColor="@android:color/black"
+                    android:layout_marginStart="8dp"
+                    android:clickable="true"
+                    android:focusable="true" />
 
             </LinearLayout>
 
