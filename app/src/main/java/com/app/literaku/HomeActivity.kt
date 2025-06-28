@@ -51,6 +51,17 @@ class HomeActivity : AppCompatActivity() {
                 .addToBackStack(null)
                 .commit()
         }
+        // Notifikasi
+        binding.bottomNavigation.findViewById<LinearLayout>(R.id.layout_notifikasi).setOnClickListener {
+            updateNavbarSelection(R.id.layout_notifikasi)
+            binding.mainScrollView.visibility = View.GONE
+            val fragment = NotifikasiFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
     }
 
     private fun updateNavbarSelection(selectedId: Int) {
@@ -58,6 +69,7 @@ class HomeActivity : AppCompatActivity() {
             R.id.layout_home,
             R.id.layout_categories,
             R.id.layout_riwayat,
+            R.id.layout_notifikasi,
         )
 
         for (id in navItems) {
