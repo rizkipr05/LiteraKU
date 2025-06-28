@@ -88,6 +88,52 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return user
     }
 
+    // Method to get user data by ID
+    fun getUserById(userId: Int): User? {
+        val db = readableDatabase
+        val query = "SELECT * FROM $TABLE_USER WHERE $COLUMN_ID = ?"
+        val cursor: Cursor = db.rawQuery(query, arrayOf(userId.toString()))
+
+        var user: User? = null
+        if (cursor.moveToFirst()) {
+            user = User(
+                id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID)),
+                fullName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NAME)),
+                email = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_EMAIL)),
+                password = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PASSWORD))
+            )
+        }
+        cursor.close()
+        db.close()
+        return user
+    }
+
+    // Method to update user data
+    fun updateUser(userId: Int, fullName: String, email: String, password: String): Boolean {
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put(COLUMN_NAME, fullName)
+            put(COLUMN_EMAIL, email)
+            put(COLUMN_PASSWORD, password)
+        }
+
+        val result = db.update(TABLE_USER, values, "$COLUMN_ID = ?", arrayOf(userId.toString()))
+        db.close()
+        return result > 0
+    }
+
+    // Method to check if email already exists (excluding current user)
+    fun isEmailExistsForOtherUser(email: String, currentUserId: Int): Boolean {
+        val db = readableDatabase
+        val query = "SELECT * FROM $TABLE_USER WHERE $COLUMN_EMAIL = ? AND $COLUMN_ID != ?"
+        val cursor: Cursor = db.rawQuery(query, arrayOf(email, currentUserId.toString()))
+
+        val exists = cursor.count > 0
+        cursor.close()
+        db.close()
+        return exists
+    }
+
     // Method to check if email already exists
     fun isEmailExists(email: String): Boolean {
         val db = readableDatabase
@@ -98,5 +144,17 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         cursor.close()
         db.close()
         return exists
+    }
+
+    // Method to verify current password
+    fun verifyCurrentPassword(userId: Int, currentPassword: String): Boolean {
+        val db = readableDatabase
+        val query = "SELECT * FROM $TABLE_USER WHERE $COLUMN_ID = ? AND $COLUMN_PASSWORD = ?"
+        val cursor: Cursor = db.rawQuery(query, arrayOf(userId.toString(), currentPassword))
+
+        val isValid = cursor.count > 0
+        cursor.close()
+        db.close()
+        return isValid
     }
 }

@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     android:background="#F5F5F5">
 
-    <!-- Status Bar -->
-
     <!-- Main Content -->
     <ScrollView
         android:layout_width="match_parent"
@@ -32,16 +30,14 @@
                 android:gravity="center"
                 android:layout_marginBottom="32dp" />
 
-
-
-            <!-- Name Field -->
-
+            <!-- Profile Image -->
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:src="@tools:sample/avatars" />
 
+            <!-- Name Field -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -59,6 +55,7 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/nameTextView"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -87,6 +84,7 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/emailTextView"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -115,6 +113,7 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/passwordTextView"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -125,7 +124,7 @@
 
             </LinearLayout>
 
-            <!-- Address Field -->
+            <!-- Address Field (Optional - you can remove if not needed) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -143,10 +142,11 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/addressTextView"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="No.23, James Street,\nNew Town, North\nProvince"
+                    android:text="No address provided"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
                     android:layout_marginStart="16dp"
