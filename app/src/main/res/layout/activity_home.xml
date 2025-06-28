@@ -663,6 +663,7 @@
 
             <!-- Home -->
             <LinearLayout
+                android:id="@+id/layout_home"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -716,6 +717,7 @@
 
             <!-- Riwayat (Active) -->
             <LinearLayout
+                android:id="@+id/layout_riwayat"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -739,6 +741,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/layout_notifikasi"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -764,6 +767,7 @@
 
             <!-- Account -->
             <LinearLayout
+                android:id="@+id/layout_profil"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
