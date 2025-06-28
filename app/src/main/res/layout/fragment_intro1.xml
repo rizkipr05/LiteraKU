@@ -22,7 +22,7 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:text="Mulailah Perjalanan Belajarmu dengan Akses ke Beragam Kursus Berkualitas."
+        android:text="Mulailah perjalanan intelektualmu dengan akses tak terbatas ke koleksi buku berkualitas dari berbagai kategori."
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:layout_width="match_parent"
