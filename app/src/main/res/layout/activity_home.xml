@@ -318,6 +318,7 @@
                     android:layout_marginBottom="32dp">
 
                     <LinearLayout
+                        android:id="@+id/kategoriButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
