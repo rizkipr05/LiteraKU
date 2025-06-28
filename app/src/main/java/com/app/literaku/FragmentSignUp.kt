@@ -50,6 +50,22 @@ class FragmentSignUp : Fragment() {
             validateInputs()
         }
 
+        // Handle the "Masuk di sini" link click
+//        binding.signInLink.setOnClickListener {
+//            parentFragmentManager.beginTransaction()
+//                .replace((view.parent as View).id, FragmentSignin())
+//                .addToBackStack(null)
+//                .commit()
+//        }
+        binding.signInLink.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(android.R.id.content, FragmentSignin()) // ganti dari R.id.fragment_container
+                .addToBackStack(null)
+                .commit()
+        }
+
+
+
         // Return the root view of the fragment
         return binding.root
     }
@@ -120,9 +136,10 @@ class FragmentSignUp : Fragment() {
 
         try {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, fragment) // Replace the current fragment with SignIn
-                .addToBackStack(null) // Optional: Add to back stack
+                .replace(android.R.id.content, fragment)
+                .addToBackStack(null)
                 .commit()
+
         } catch (e: Exception) {
             Log.e("FragmentSignUp", "Fragment navigation failed: ${e.message}")
             Toast.makeText(requireContext(), "Navigation failed: ${e.message}", Toast.LENGTH_SHORT).show()
