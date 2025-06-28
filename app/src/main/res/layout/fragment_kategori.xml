@@ -214,6 +214,7 @@
 
                     <!-- Horror -->
                     <LinearLayout
+                        android:id="@+id/kategoriHorror"
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
