@@ -245,6 +245,7 @@
 
                     <!-- Sci-fi -->
                     <LinearLayout
+                        android:id="@+id/kategoriScifi"
                         android:layout_width="0dp"
                         android:layout_height="120dp"
                         android:layout_weight="1"
